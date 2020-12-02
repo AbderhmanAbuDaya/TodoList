@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/MainColor"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="62dp"
+
+        >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="227dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:lineHeight="34dp"
+            android:paddingHorizontal="20dp"
+            android:text="Create profile to start your first ToDo List"
+            android:textColor="@color/white"
+            android:textFontWeight="400"
+            android:textSize="24dp" />
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:layout_marginHorizontal="30dp"
+            android:padding="10dp"
+            android:inputType="textPersonName"
+            android:layout_marginTop="30dp"
+            android:alpha=".19"
+            android:textSize="24dp"
+            android:textFontWeight="700"
+            android:hint="your name "
+            android:textColorHint="@color/white"
+            />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
