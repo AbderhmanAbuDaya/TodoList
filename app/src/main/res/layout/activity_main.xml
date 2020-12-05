@@ -11,9 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/MainColor"
+        android:gravity="center"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-88dp">
+        >
 
 
         <ImageView
@@ -33,16 +33,22 @@
             android:text="Things ToDo"
             android:textColor="@color/white"
             android:textSize="24dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/NextBtn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:layout_marginRight="30dp"
+            android:layout_height="50dp"
+            android:text="Next"
+            android:textSize="25sp"
+            android:layout_gravity="end"
             android:gravity="end"
-            android:text="next "
             android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:layout_marginRight="20dp"
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

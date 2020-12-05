@@ -47,6 +47,68 @@
             android:hint="your name "
             android:textColorHint="@color/white"
             />
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:layout_marginHorizontal="30dp"
+            android:padding="10dp"
+            android:inputType="textPersonName"
+            android:layout_marginTop="30dp"
+            android:alpha=".19"
+            android:textSize="24dp"
+            android:textFontWeight="700"
+            android:hint="your name "
+            android:textColorHint="@color/white"
+            />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:layout_marginHorizontal="30dp"
+            android:padding="10dp"
+            android:inputType="textPersonName"
+            android:layout_marginTop="30dp"
+            android:alpha=".19"
+            android:textSize="24dp"
+            android:textFontWeight="700"
+            android:hint="your name "
+            android:textColorHint="@color/white"
+            />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_centerInParent="true"
+android:background="@drawable/gradient"
+            android:text="Button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account?"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:alpha="0.5"
+            android:textSize="14sp"
+            android:textFontWeight="400"
+/>
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Log In"
+            android:textColor="@color/white"
+            android:textFontWeight="700" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
