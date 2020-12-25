@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".show_result">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#5A2CCF "
+        android:orientation="vertical"
+        tools:context=".Result"
+        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:src="@drawable/arrowback_foreground"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:alpha="0.7"
+                android:gravity="center"
+                android:layout_marginLeft="30dp"
+                android:text="Lists ToDo"
+                android:textColor="#FFFFFF "
+                android:textSize="22dp"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/srearch_rounded"
+            android:textColor="#FFFFFF">
+
+            <ImageView
+                android:id="@+id/SearchImage"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:src="@drawable/search_foreground" />
+
+            <EditText
+                android:id="@+id/meet"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.9"
+                android:hint="Meet"
+                android:textColorHint="@color/black"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/back2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="40dp"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Results :"
+            android:textColor="#FFFFFF "
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="33dp"
+            />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/srearch_rounded"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="25dp"
+            >
+            <CheckBox
+                android:id="@+id/CheckB1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Meet"
+                android:onClick="onCheckboxClicked"
+                />
+
+            <TextView
+                android:id="@+id/resultPersonal1"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="PERSONAL"
+                android:layout_marginLeft="100dp"
+                android:textColor="@color/black"
+                android:gravity="end"
+                android:background="@drawable/personal"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/srearch_rounded"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="25dp"
+            >
+            <CheckBox
+                android:id="@+id/CheckB2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Meet"
+                android:onClick="onCheckboxClicked"
+                />
+
+            <TextView
+                android:id="@+id/resultPersonal2"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="PERSONAL"
+                android:layout_marginLeft="100dp"
+                android:textColor="@color/black"
+                android:gravity="end"
+                android:background="@drawable/personal"
+                />
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
