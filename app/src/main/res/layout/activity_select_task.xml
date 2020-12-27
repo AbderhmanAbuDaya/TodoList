@@ -100,54 +100,13 @@
             android:textColor="@color/black"
             />
     </LinearLayout>
-    <LinearLayout
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/choice_task"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/srearch_rounded"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="25dp"
-        >
-        <CheckBox
-            android:id="@+id/CheckB1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Do my homework"
-            android:onClick="onCheckboxClicked"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/srearch_rounded"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="25dp"
-        >
-        <CheckBox
-            android:id="@+id/CheckB2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Do my homework"
-            android:onClick="onCheckboxClicked"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/srearch_rounded"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="25dp"
-        >
-        <CheckBox
-            android:id="@+id/CheckB3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Do my homework"
-            android:onClick="onCheckboxClicked"
-            />
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 
 

@@ -1,49 +1,36 @@
 package com.example.todollist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class select_task extends AppCompatActivity {
+
+    RecyclerView choice_task;
+    TaskAdpaterCheck  taskAdapter;
+    static List<TaskCheck> CheckList = new ArrayList<TaskCheck>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_task);
+        CheckList.add(new TaskCheck("2","Meeting with x" ,false));
+        CheckList.add(new TaskCheck("3","Meeting with  y" ,false));
+        //CheckList.add(new TaskCheck("1","Meeting with Castmer" ,false));
+
+        choice_task = findViewById(R.id.choice_task);
+        choice_task.setLayoutManager(new LinearLayoutManager(this));
+        taskAdapter = new TaskAdpaterCheck (this,CheckList);
+        choice_task.setAdapter(taskAdapter);
+
     }
-    public void onCheckboxClicked(View view) {
-        // Is the view now checked?
-        boolean ed = ((CheckBox) view).isChecked();
-        CheckBox CheckB1 = findViewById(R.id.CheckB1);
-        CheckBox CheckB2 = findViewById(R.id.CheckB2);
-        CheckBox CheckB3 = findViewById(R.id.CheckB3);
 
-        // Check which checkbox was clicked
-        switch(view.getId()) {
-            case R.id.CheckB1:
-                if (ed)
-                    CheckB1.setPaintFlags(CheckB1.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                else
-                    CheckB1.setPaintFlags(CheckB1.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-
-                break;
-            case R.id.CheckB2:
-                if (ed)
-                    CheckB2.setPaintFlags(CheckB2.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                else
-                    CheckB2.setPaintFlags(CheckB2.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-
-                break;
-            case R.id.CheckB3:
-                if (ed)
-                    CheckB3.setPaintFlags(CheckB3.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                else
-                    CheckB3.setPaintFlags(CheckB3.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-
-                break;
-        }
-    }
 }
