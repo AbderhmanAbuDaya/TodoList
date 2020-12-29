@@ -1,0 +1,105 @@
+ <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/MainColor"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="227dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:lineHeight="34dp"
+            android:paddingHorizontal="20dp"
+            android:text="Create profile to start your first ToDo List"
+            android:textColor="@color/white"
+            android:textFontWeight="400"
+            android:textSize="24dp" />
+
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/srearch_rounded"
+            android:layout_marginHorizontal="30dp"
+            android:padding="10dp"
+            android:hint="Your name "
+            android:inputType="textPersonName"
+            android:layout_marginTop="30dp"
+            android:textSize="24dp"
+            android:textFontWeight="700"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            />
+
+     <EditText
+         android:id="@+id/password"
+         android:layout_width="match_parent"
+         android:layout_height="60dp"
+         android:layout_marginHorizontal="30dp"
+         android:layout_marginTop="30dp"
+         android:background="@drawable/srearch_rounded"
+         android:hint="Password "
+         android:inputType="textPassword                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 1"
+         android:padding="10dp"
+         android:textColor="@color/black"
+         android:textColorHint="@color/black"
+         android:textFontWeight="700"
+         android:textSize="24dp" />
+
+     <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/srearch_rounded"
+            android:layout_marginHorizontal="30dp"
+            android:padding="10dp"
+            android:hint="Your email address "
+            android:inputType="textPassword"
+            android:layout_marginTop="30dp"
+            android:textSize="24dp"
+            android:textFontWeight="700"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/create"
+            android:text="Create your profile"
+            android:textFontWeight="700"
+            />
+
+        <TextView
+            android:id="@+id/signIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account?"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:alpha="0.5"
+            android:textSize="14sp"
+            android:textFontWeight="400"
+            />
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Log In"
+            android:textColor="@color/white"
+            android:textFontWeight="700" />
+
+    </LinearLayout>

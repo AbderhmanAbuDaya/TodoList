@@ -9,14 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TodolList">
-        <activity android:name=".TaskCheck"></activity>
+        <activity android:name=".sign_up"></activity>
         <activity android:name=".item" />
         <activity android:name=".Details" />
         <activity android:name=".show_result" />
         <activity android:name=".select_task" />
         <activity android:name=".Lists" />
         <activity android:name=".Login" />
-        <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
