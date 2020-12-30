@@ -32,6 +32,7 @@ public class select_task extends AppCompatActivity implements TaskAdpaterCheck.L
     EditText taskDes, taskTitle;
     String categoryId,categoryTitle,count;
     TextView categoryName,delete;
+    ImageView back2;
     private FirebaseAuth mAuth;
     count counts;
 
@@ -80,6 +81,15 @@ public class select_task extends AppCompatActivity implements TaskAdpaterCheck.L
                 System.out.println(uid);
             }
         });
+        back2= findViewById(R.id.backDetsels);
+        back2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+              finish();
+
+            }
+        });
+
         mAuth= FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String uid = user.getUid();
@@ -112,6 +122,7 @@ public class select_task extends AppCompatActivity implements TaskAdpaterCheck.L
         intent.putExtra("TASK_TITLE", ListCheck.get(position).getTitle());
         intent.putExtra("TASK_DES", ListCheck.get(position).getDescription());
         intent.putExtra("CATEGORY_ID", categoryId);
+        intent.putExtra("CATEGORY_TITLE", categoryTitle);
         startActivity(intent);
     }
 }

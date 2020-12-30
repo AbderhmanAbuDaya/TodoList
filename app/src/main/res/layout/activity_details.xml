@@ -70,6 +70,7 @@
                     android:textSize="24sp"
                     />
                 <TextView
+                    android:id="@+id/categoryDet"
                     android:layout_width="65dp"
                     android:layout_height="40dp"
                     android:text="MEET"

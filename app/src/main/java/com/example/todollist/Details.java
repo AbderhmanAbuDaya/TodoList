@@ -11,8 +11,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Details extends AppCompatActivity {
-String taskId,taskTitle,taskDes,categoryId;
-TextView title_task,description,remove;
+String taskId,taskTitle,taskDes,categoryId,categoryValue;
+TextView title_task,description,remove,categoryDet;
     FirebaseAuth mAuth;
     count counts;
 
@@ -31,6 +31,9 @@ TextView title_task,description,remove;
         categoryId = extras.getString("CATEGORY_ID");
         title_task.setText(taskTitle);
         description.setText(taskDes);
+        categoryValue = extras.getString("CATEGORY_TITLE");
+        categoryDet=findViewById(R.id.categoryDet);
+        categoryDet.setText(categoryValue);
 
         remove.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
     TextView NextBtn;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +22,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Login.class);
+                Intent intent;
+             if(null != FirebaseAuth.getInstance().getCurrentUser()){
+                     intent = new Intent(MainActivity.this, Lists.class);
+
+                }else {
+                     intent = new Intent(MainActivity.this, Login.class);
+                }
                 startActivity(intent);
             }
         });
