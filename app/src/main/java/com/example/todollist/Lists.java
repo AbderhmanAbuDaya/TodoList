@@ -24,9 +24,10 @@ import java.util.ArrayList;
 public class Lists extends AppCompatActivity implements TaskAdapterEx.ListItemClickListener{
     RecyclerView tasks_show;
     TaskAdapterEx  taskAdapter;
-    TextView titleList;
+    TextView titleList,logout;
     Button addList;
     FirebaseAuth mAuth;
+
     static java.util.List<TaskItem> task = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,20 @@ public class Lists extends AppCompatActivity implements TaskAdapterEx.ListItemCl
         tasks_show.setLayoutManager(new LinearLayoutManager(this));
         taskAdapter = new TaskAdapterEx(task,this);
         tasks_show.setAdapter(taskAdapter);
+
+        //log out
+        logout = findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(Lists.this,Login.class);
+                startActivity(intent);
+            }
+        });
+
+        //end log out
     }
 
     @Override
