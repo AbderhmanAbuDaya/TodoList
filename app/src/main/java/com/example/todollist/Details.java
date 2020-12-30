@@ -14,6 +14,7 @@ public class Details extends AppCompatActivity {
 String taskId,taskTitle,taskDes,categoryId;
 TextView title_task,description,remove;
     FirebaseAuth mAuth;
+    count counts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,8 @@ TextView title_task,description,remove;
                 FirebaseUser user = mAuth.getCurrentUser();
                 String uid = user.getUid();
                 FirebaseDatabase.getInstance().getReference("Users").child(uid).child("category").child(categoryId).child("tasks").child(taskId).removeValue();
-
+                counts = new count(uid, categoryId, taskId);
+                counts.setListsCount("sub");
                 finish();
             }
         });

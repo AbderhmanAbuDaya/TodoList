@@ -30,9 +30,10 @@ public class select_task extends AppCompatActivity implements TaskAdpaterCheck.L
     static List<TaskCheck> ListCheck = new ArrayList<>();
     Button addTasks;
     EditText taskDes, taskTitle;
-    String categoryId,categoryTitle;
+    String categoryId,categoryTitle,count;
     TextView categoryName,delete;
     private FirebaseAuth mAuth;
+    count counts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,8 @@ public class select_task extends AppCompatActivity implements TaskAdpaterCheck.L
                 String taskId = FirebaseDatabase.getInstance().getReference("Users").child(uid).child("category").child(categoryId).child("tasks").push().getKey();
                 newTask.setId(taskId);
                 FirebaseDatabase.getInstance().getReference("Users").child(uid).child("category").child(categoryId).child("tasks").child(taskId).setValue(newTask);
+                counts = new count(uid, categoryId, taskId);
+                counts.setListsCount("Add");
                 Toast.makeText(select_task.this,"added successfully", Toast.LENGTH_SHORT).show();
                 taskTitle.setText("");
                 taskDes.setText("");
