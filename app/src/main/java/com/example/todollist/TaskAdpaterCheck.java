@@ -16,33 +16,37 @@ public class TaskAdpaterCheck extends RecyclerView.Adapter<TaskAdpaterCheck.View
 
     private final Context context;
     List<TaskCheck> tasks;
-
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder).
-     */
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+  ListItemClickListener mListItemClickListener;
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         CheckBox checkBox;
-
-        public ViewHolder(View view) {
+       ListItemClickListener listItemClickListener;
+        public ViewHolder(View view,ListItemClickListener listItemClickListener) {
             super(view);
             // Define click listener for the ViewHolder's View
+            this.listItemClickListener=listItemClickListener;
             checkBox = itemView.findViewById(R.id.CheckB1);
+            itemView.setOnClickListener(this);
+            view.setOnClickListener(this);
 
 
         }
 
         public void setData(final TaskCheck task) {
-            // title.setText(task.getTitle());
-            // isChecked.setText(task.getIsChecked());
             checkBox.setText(task.getTitle());
             checkBox.setSelected(task.getIsChecked());
         }
+
+        @Override
+        public void onClick(View v) {
+            listItemClickListener.onListItemClick(getAdapterPosition());
+        }
+
     }
 
-    public TaskAdpaterCheck(Context context, List<TaskCheck> tasks) {
+    public TaskAdpaterCheck(Context context, List<TaskCheck> tasks, ListItemClickListener listItemClickListener) {
         this.context = context;
         this.tasks = tasks;
+        this.mListItemClickListener = listItemClickListener;
     }
     // Create new views (invoked by the layout manager)
     @Override
@@ -51,7 +55,7 @@ public class TaskAdpaterCheck extends RecyclerView.Adapter<TaskAdpaterCheck.View
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.activity_task_check, viewGroup, false);
 
-        return new ViewHolder(view);
+        return new ViewHolder(view,mListItemClickListener);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -84,5 +88,8 @@ public class TaskAdpaterCheck extends RecyclerView.Adapter<TaskAdpaterCheck.View
     @Override
     public int getItemCount() {
         return tasks.size();
+    }
+    interface ListItemClickListener {
+        void onListItemClick(int position);
     }
 }

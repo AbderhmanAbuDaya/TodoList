@@ -5,14 +5,16 @@ public class TaskCheck {
     String Title;
     Boolean isChecked;
     String id;
+    String Description;
 
     public  TaskCheck() {
     }
 
-    public TaskCheck(String id,String title, Boolean isChecked) {
+    public TaskCheck(String id,String title, Boolean isChecked,String Description) {
         this.Title = title;
         this.isChecked = isChecked;
         this.id=id;
+        this.Description=Description;
     }
 
     public String getId() {
@@ -38,4 +40,9 @@ public class TaskCheck {
     public void setIsChecked(Boolean isChecked) {
         this.isChecked = isChecked;
     }
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String Description) { this.Description = Description;}
 }

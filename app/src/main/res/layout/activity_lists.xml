@@ -93,25 +93,29 @@
         android:layout_height="35dp"
         android:orientation="horizontal"
         android:layout_marginHorizontal="20dp"
-        android:padding="5dp"
         android:background="@drawable/srearch_rounded"
         >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:src="@drawable/add_foreground"
+        <Button
+           android:id="@+id/addList"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/add_foreground"
             android:layout_gravity="center"
             android:foregroundGravity="center"
             />
-        <TextView
-            android:id="@+id/CreateList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <EditText
+            android:id="@+id/titleList"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_gravity="center"
-            android:textStyle="bold"
-            android:text="Create new list here"
+            android:hint="Add Task"
+           android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:background="@drawable/rounded"
+
             android:textSize="20dp"
-            android:textColor="@color/black"
+
 
             />
     </LinearLayout>
