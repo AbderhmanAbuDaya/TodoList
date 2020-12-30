@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Details">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#5A2CCF "
@@ -62,6 +60,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/title_task"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:text="Meet Joseph"
@@ -108,7 +107,7 @@
                 android:alpha="0.5"
                 />
             <TextView
-                android:id="@+id/des1"
+                android:id="@+id/description"
                 android:layout_width="260dp"
                 android:lineSpacingExtra="5dp"
                 android:layout_height="wrap_content"
@@ -119,59 +118,24 @@
                 android:text="Have to meet him because I want to show him my latest app design in person."
                 android:textSize="14sp"
                 />
-
-            <TextView
-                android:id="@+id/des2"
-                android:layout_width="260dp"
-                android:lineSpacingExtra="5dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:gravity="top"
-                android:textColor="@color/black"
-                android:text="- style"
-                android:textSize="14sp"
-                />
-            <TextView
-                android:id="@+id/des3"
-                android:layout_width="260dp"
-                android:lineSpacingExtra="5dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:gravity="top"
-                android:textColor="@color/black"
-                android:text="- interaction"
-                android:textSize="14sp"
-                />
-            <TextView
-                android:id="@+id/des4"
-                android:layout_width="260dp"
-                android:lineSpacingExtra="5dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:gravity="top"
-                android:textColor="@color/black"
-                android:text="- style"
-                android:textSize="14sp"
-                />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 />
+
             <TextView
+                android:id="@+id/remove"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Delete"
-                android:textSize="25sp"
-                android:layout_marginBottom="40dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="40dp"
                 android:alpha=".5"
                 android:gravity="start"
+                android:text="Delete"
                 android:textColor="@color/black"
-                android:layout_marginRight="20dp"
+                android:textSize="25sp"
 
                 />
         </LinearLayout>

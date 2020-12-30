@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -103,6 +104,11 @@ public class select_task extends AppCompatActivity implements TaskAdpaterCheck.L
 
     @Override
     public void onListItemClick(int position) {
-
+        Intent intent = new Intent(select_task.this, Details.class);
+        intent.putExtra("TASK_ID", ListCheck.get(position).getId());
+        intent.putExtra("TASK_TITLE", ListCheck.get(position).getTitle());
+        intent.putExtra("TASK_DES", ListCheck.get(position).getDescription());
+        intent.putExtra("CATEGORY_ID", categoryId);
+        startActivity(intent);
     }
 }
