@@ -34,7 +34,9 @@ public class select_task extends AppCompatActivity implements TaskAdpaterCheck.L
     TextView categoryName,delete;
     ImageView back2;
     private FirebaseAuth mAuth;
-    count counts;
+    boolean flag;
+    int countTask;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +63,38 @@ public class select_task extends AppCompatActivity implements TaskAdpaterCheck.L
                 newTask.setDescription(taskDes.getText().toString());
                 newTask.setIsChecked(false);
                 String taskId = FirebaseDatabase.getInstance().getReference("Users").child(uid).child("category").child(categoryId).child("tasks").push().getKey();
+                System.out.print("****"+taskId);
                 newTask.setId(taskId);
                 FirebaseDatabase.getInstance().getReference("Users").child(uid).child("category").child(categoryId).child("tasks").child(taskId).setValue(newTask);
-                counts = new count(uid, categoryId, taskId);
-                counts.setListsCount("Add");
+                FirebaseDatabase.getInstance().getReference("Users").child(uid).child("category")
+                        .addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for(DataSnapshot snapshot: dataSnapshot.getChildren() ){
+                                    TaskItem task =  snapshot.getValue(TaskItem.class);
+                                    if(task.getId().compareTo(categoryId) == 0 && flag){
+                                        countTask = task.getCount()+1 ;
+                                        FirebaseDatabase.getInstance().getReference("Users").child(uid).child("category").child(categoryId).child("count").setValue(countTask);
+                                        flag = false;
+//                                        Intent intent = new Intent(TaskChoices.this, com.example.todo.List.class);
+//                                        startActivity(intent);
+                                        break;
+                                    }
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError error) {
+                                // Failed to read value
+                            }
+                        });
+                flag=true;
                 Toast.makeText(select_task.this,"added successfully", Toast.LENGTH_SHORT).show();
                 taskTitle.setText("");
                 taskDes.setText("");
+
             }
         });
         delete.setOnClickListener(new View.OnClickListener(){

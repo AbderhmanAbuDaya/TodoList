@@ -49,7 +49,7 @@ public class Lists extends AppCompatActivity implements TaskAdapterEx.ListItemCl
                 String uid = user.getUid();
                 TaskItem newTask=new TaskItem();
                 newTask.setTitle(titleList.getText().toString());
-                newTask.setCount(0);
+                newTask.setCount(newTask.getCount());
                 String categoryId = FirebaseDatabase.getInstance().getReference("Users").child(uid).child("category").push().getKey();
                 newTask.setId(categoryId);
                 FirebaseDatabase.getInstance().getReference("Users").child(uid).child("category").child(categoryId).setValue(newTask);
@@ -94,11 +94,11 @@ public class Lists extends AppCompatActivity implements TaskAdapterEx.ListItemCl
         });
         back1= findViewById(R.id.back1);
         back1.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Lists.this,MainActivity.class);
                 startActivity(intent);
-
             }
         });
 
