@@ -2,6 +2,7 @@ package com.example.todollist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -74,5 +75,21 @@ TextView title_task,description,remove,categoryDet;
                 finish();
             }
         });
+
+        findViewById(R.id.edit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+                Intent intent = new Intent(Details.this, Edit.class);
+                intent.putExtra("TASK_ID", taskId);
+                intent.putExtra("TASK_TITLE", taskTitle);
+                intent.putExtra("TASK_DES", taskDes);
+                intent.putExtra("CATEGORY_NAME", categoryValue);
+                intent.putExtra("CATEGORY_ID", categoryId);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }

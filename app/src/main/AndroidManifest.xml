@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TodolList">
-        <activity android:name=".sign_up"></activity>
+        <activity android:name=".Edit"></activity>
+        <activity android:name=".sign_up" />
         <activity android:name=".item" />
         <activity android:name=".Details" />
         <activity android:name=".show_result" />
